@@ -26,18 +26,14 @@ acButton.addEventListener('click', function(){
 // Adding 'ce-button' click listener which removed last entered number
 ceButton.addEventListener('click', function(){
   var inputFieldValue = inputField.value;
-  var inputFieldLastIndex = inputFieldValue.length - 1;
-  var lastInputChar = inputFieldValue[inputFieldLastIndex];
-  // TODO: Can not return +|/|x as lastInputChar. Investigate and fix
-  var inputArray = lastInputChar == ('x'|'-'|'+') ? 'it is' : 'it is not';
-  //var inputArray = inputFieldValue.split(/\x|\-|\+/);
-  if (Number(lastInputChar)) {
-    console.log(lastInputChar);
-    console.log(inputArray);
-    //inputField.value = inputField.value.substring(0, inputFieldLastIndex);
-  } else {
-    //inputField.value = inputField.value.substring(0, inputFieldLastIndex-2);
-  }
+  var lastIndex = inputFieldValue.length - 1;
+  var lastChar = inputFieldValue[lastIndex];
+  var inputArray = inputFieldValue.split(/(\x|-|\+|\/)/);
+  // returns an array where if last char was an operator, it has two more values in array
+  console.log(inputArray);
+  // TODO: If lastChar is x, -, + or /, remove two last indexes of array, otherwise remove 1.
+  var newArray = lastChar.match(/x|-|\+/) ? inputArray.slice(0, lastIndex-1) : inputArray.slice(0, lastIndex-2);
+  console.log(newArray);
 }, false);
 
 // TODO: 1. Create functions for AC/CE buttons.
