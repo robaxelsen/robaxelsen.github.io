@@ -15,7 +15,7 @@ for (var i = 0; i < numButtons.length; i++) {
 for (var i = 0; i < operatorButtons.length; i++) {
   operatorButtons[i].addEventListener('click', function(){
     var lastChar = window.inputField.value[window.inputField.value.length - 1];
-    if (!lastChar.match(/x|-|\+/)) {  
+    if (window.inputField.value.length !== 0 && !lastChar.match(/x|-|\+/)) {  
       window.inputField.value += this.value;
     };
   }, false);
@@ -35,3 +35,4 @@ ceButton.addEventListener('click', function(){
 }, false);
 
 // TODO: Add function for equal button
+
