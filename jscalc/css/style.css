@@ -3756,7 +3756,8 @@ nav {
 }
 
 .navbar {
-  background: #3B8386;
+  /*background: #3B8386;*/
+  background: #2196F3;
 }
 
 .calculator {
@@ -3789,7 +3790,11 @@ nav {
   font-size: 2rem;
 }
 
-#ac-button,
-#ce-button {
-  background-color: #A7CF5A;
+.clear-button {
+  background-color: #80C6FF !important;
+}
+
+.num-button,
+.operator-button {
+  background-color: #2196F3 !important;
 }
