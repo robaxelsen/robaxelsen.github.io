@@ -2,6 +2,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JavaScript Calculator</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether.min.css">
   <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
@@ -9,39 +10,41 @@
 </head>
 
 <body>
-  
-<nav class="navbar navbar-collapse navbar-default" role="navigation">
-	<div class="container-fluid">
-    	<div class="navbar-header">
-    		<a class="navbar-brand">JavaScript Calculator</a>
-    </div>
-	</div>
-</nav>
 
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand">JavaScript Calculator</a>
+      </div>
+    </div>
+  </nav>
+  
   <container>
 
-  <div class="calculator col-8 jumbotron">
-    <div class="field-group">
-      <input id="input-field" type="text" name="calc-output" value="">
+  <div class="calculator jumbotron col-10">
+    <div class="calc-group">
+      <div class="field-group">
+        <input id="input-field" type="text" name="calc-output" value="">
+      </div>
+        <button id="ac-button" class="btn btn-success clear-button" value="AC" onclick="">AC</button>
+        <button id="ce-button" class="btn btn-success clear-button" value="CE" onclick="">CE</button>
+        <button id="divide-button" class="btn btn-success operator-button" value="/" onclick="">/</button>
+        <button id="multiple-button" class="btn btn-success operator-button" value="x" onclick="">X</button>
+        <button id="7-button" class="btn btn-success num-button" value="7" onclick="">7</button>
+        <button id="8-button" class="btn btn-success num-button" value="8" onclick="">8</button>
+        <button id="9-button" class="btn btn-success num-button" value="9" onclick="">9</button>
+        <button id="minus-button" class="btn btn-success operator-button" value="-" onclick="">-</button>
+        <button id="4-button" class="btn btn-success num-button" value="4" onclick="">4</button>
+        <button id="5-button" class="btn btn-success num-button" value="5" onclick="">5</button>
+        <button id="6-button" class="btn btn-success num-button" value="6" onclick="">6</button>
+        <button id="plus-button" class="btn btn-success operator-button" value="+" onclick="">+</button>
+        <button id="1-button" class="btn btn-success num-button" value="1" onclick="">1</button>
+        <button id="2-button" class="btn btn-success num-button" value="2" onclick="">2</button>
+        <button id="3-button" class="btn btn-success num-button" value="3" onclick="">3</button>
+        <button id="equal-button" class="btn btn-success operator-button" value="=" onclick="">=</button>
+        <button id="0-button" class="btn btn-success num-button" value="0" onclick="">0</button>
+        <button id="dot-button" class="btn btn-success operator-button" value="." onclick="">.</button>
     </div>
-      <button id="ac-button" class="btn btn-default clear-button" value="AC" onclick="">AC</button>
-      <button id="ce-button" class="btn btn-default clear-button" value="CE" onclick="">CE</button>
-      <button id="divide-button" class="btn btn-success operator-button" value="/" onclick="">/</button>
-      <button id="multiple-button" class="btn btn-success operator-button" value="x" onclick="">X</button>
-      <button id="7-button" class="btn btn-success num-button" value="7" onclick="">7</button>
-      <button id="8-button" class="btn btn-success num-button" value="8" onclick="">8</button>
-      <button id="9-button" class="btn btn-success num-button" value="9" onclick="">9</button>
-      <button id="minus-button" class="btn btn-success operator-button" value="-" onclick="">-</button>
-      <button id="4-button" class="btn btn-success num-button" value="4" onclick="">4</button>
-      <button id="5-button" class="btn btn-success num-button" value="5" onclick="">5</button>
-      <button id="6-button" class="btn btn-success num-button" value="6" onclick="">6</button>
-      <button id="plus-button" class="btn btn-success operator-button" value="+" onclick="">+</button>
-      <button id="1-button" class="btn btn-success num-button" value="1" onclick="">1</button>
-      <button id="2-button" class="btn btn-success num-button" value="2" onclick="">2</button>
-      <button id="3-button" class="btn btn-success num-button" value="3" onclick="">3</button>
-      <button id="equal-button" class="btn btn-success operator-button" value="=" onclick="">=</button>
-      <button id="0-button" class="btn btn-success num-button" value="0" onclick="">0</button>
-      <button id="dot-button" class="btn btn-success operator-button" value="." onclick="">.</button>
   </div>
 
 </container>

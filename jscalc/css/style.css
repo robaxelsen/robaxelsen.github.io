@@ -3754,19 +3754,19 @@ body {
 nav {
   margin-bottom: 2.3rem;
 }
+
 .navbar-default {
   background: #2196F3 !important;
 }
 
 .calculator {
   margin: 0 auto;
-  min-height: 475px;
-  max-width: 450px;
 }
 
 .jumbotron {
   padding-top: 20px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  overflow: auto;
 }
 
 .calculator button { 
@@ -3795,4 +3795,9 @@ nav {
 .num-button,
 .operator-button {
   background-color: #2196F3 !important;
+}
+
+#ac-button,
+#ce-button {
+  padding-left: 15px;
 }
