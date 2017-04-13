@@ -15,7 +15,7 @@ for (var i = 0; i < numButtons.length; i++) {
 for (var i = 0; i < operatorButtons.length; i++) {
   operatorButtons[i].addEventListener('click', function(){
     var lastChar = window.inputField.value[window.inputField.value.length - 1];
-    if (window.inputField.value.length !== 0 && !lastChar.match(/x|-|\+/)) {  
+    if (window.inputField.value.length !== 0 && !lastChar.match(/x|-|\+|\//)) {  
       window.inputField.value += this.value;
     };
   }, false);
