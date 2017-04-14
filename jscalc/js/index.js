@@ -1,38 +1,51 @@
-window.numButtons = document.getElementsByClassName('num-button');
-window.operatorButtons = document.getElementsByClassName('operator-button');
-window.acButton = document.getElementById('ac-button');
-window.ceButton = document.getElementById('ce-button');
-window.inputField = document.getElementById('input-field');
+window.jsCalcNumButtons = document.getElementsByClassName('num-button');
+window.jsCalcOperatorButtons = document.getElementsByClassName('operator-button');
+window.jsCalcAcButton = document.getElementById('ac-button');
+window.jsCalcCeButton = document.getElementById('ce-button');
+window.jsCalcEqualButton = document.getElementById('equal-button');
+window.jsCalcInputField = document.getElementById('input-field');
 
 // Adding click listener to all number buttons, which grabs the value of the clicked button, and adds it to the input field.
-for (var i = 0; i < numButtons.length; i++) {
-  numButtons[i].addEventListener('click', function(){
-    window.inputField.value += this.value;
+for (var i = 0; i < jsCalcNumButtons.length; i++) {
+  jsCalcNumButtons[i].addEventListener('click', function(){
+    window.jsCalcInputField.value += this.value;
   }, false);
 };
 
 // Adding click listeners to all operator buttons (except equal sign) and period sign. 
-for (var i = 0; i < operatorButtons.length; i++) {
-  operatorButtons[i].addEventListener('click', function(){
-    var lastChar = window.inputField.value[window.inputField.value.length - 1];
-    if (window.inputField.value.length !== 0 && !lastChar.match(/x|-|\+|\//)) {  
-      window.inputField.value += this.value;
+for (var i = 0; i < jsCalcOperatorButtons.length; i++) {
+  jsCalcOperatorButtons[i].addEventListener('click', function(){
+    var lastChar = window.jsCalcInputField.value[window.jsCalcInputField.value.length - 1];
+    if (window.jsCalcInputField.value.length !== 0 && !lastChar.match(/x|-|\+|\//)) {  
+      window.jsCalcInputField.value += this.value;
     };
   }, false);
 };
 
 // Adding 'ac-button' click listener which resets whole input field
-acButton.addEventListener('click', function(){
-  window.inputField.value = '';
+jsCalcAcButton.addEventListener('click', function(){
+  window.jsCalcInputField.value = '';
 }, false);
 
 // Adding 'ce-button' click listener which removed last entered number or operator
-ceButton.addEventListener('click', function(){
-  var lastChar = window.inputField.value[window.inputField.value.length - 1];
-  var inputArray = inputField.value.split(/(\x|-|\+|\/)/);
+jsCalcCeButton.addEventListener('click', function(){
+  var lastChar = window.jsCalcInputField.value[window.jsCalcInputField.value.length - 1];
+  var inputArray = jsCalcInputField.value.split(/(\x|-|\+|\/)/);
   var newValue = lastChar.match(/x|-|\+|\//) ? inputArray.slice(0, -2).join('') : inputArray.slice(0, -1).join('');
-  window.inputField.value = newValue;
+  window.jsCalcInputField.value = newValue;
 }, false);
 
 // TODO: Add function for equal button
-
+jsCalcEqualButton.addEventListener('click', function(){
+  var lastChar = window.jsCalcInputField.value[window.jsCalcInputField.value.length - 1];
+  var inputArray = jsCalcInputField.value.split(/(\x|-|\+|\/)/);
+  //var newValue = lastChar.match(/x|-|\+|\//) ? inputArray.slice(0, -2).join('') : inputArray.slice(0, -1).join('');
+  if (lastChar.match(/x|-|\+|\//)) {
+    inputArray.pop();
+    inputArray.pop();
+  }
+  if (inputArray.length >= 3) {
+    // TODO: a. Operate on first three indexes in array, operate with index 2 on index 0 and 1, then remove them from array (with shift or slice).
+    //       b. The remaining (if any) should then be in pairs of number and operator. We should be able to make a for loop that iterates over the length/2
+  }
+})
