@@ -3805,7 +3805,8 @@ nav {
 }
 
 .num-button,
-.operator-button {
+.operator-button,
+.equal-button {
   background-color: #2196F3 !important;
 }
 
