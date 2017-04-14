@@ -39,13 +39,48 @@ jsCalcCeButton.addEventListener('click', function(){
 jsCalcEqualButton.addEventListener('click', function(){
   var lastChar = window.jsCalcInputField.value[window.jsCalcInputField.value.length - 1];
   var inputArray = jsCalcInputField.value.split(/(\x|-|\+|\/)/);
+  var total = 0;
   //var newValue = lastChar.match(/x|-|\+|\//) ? inputArray.slice(0, -2).join('') : inputArray.slice(0, -1).join('');
+  console.log('inputArray before operations', inputArray);
   if (lastChar.match(/x|-|\+|\//)) {
     inputArray.pop();
     inputArray.pop();
   }
   if (inputArray.length >= 3) {
     // TODO: a. Operate on first three indexes in array, operate with index 2 on index 0 and 1, then remove them from array (with shift or slice).
-    //       b. The remaining (if any) should then be in pairs of number and operator. We should be able to make a for loop that iterates over the length/2
+    switch (inputArray[1]) {
+      case 'x':
+        total = Number(inputArray[0]) * Number(inputArray[2]);
+        break;
+      case '-':
+        total = Number(inputArray[0]) - Number(inputArray[2]);
+        break;
+      case '+':
+        total = Number(inputArray[0]) + Number(inputArray[2]);
+        break;
+      case '/':
+        total = Number(inputArray[0]) / Number(inputArray[2]);
+        break;
+    };
+    //inputArray = inputArray.slice(3, -1);
+    console.log('inputArray after first operations', inputArray);
+    for (i = 0;i < inputArray.length/2;i++) {
+    // TODO: b. The remaining (if any) should then be in pairs of number and operator. We should be able to make a for loop that iterates over the length/2
+      switch (inputArray[0]) {
+        case 'x':
+          total *= Number(inputArray[1]);
+          break;
+        case '-':
+          total -= Number(inputArray[1]);
+          break;
+        case '+':
+          total += Number(inputArray[1]);
+          break;
+        case '/':
+          total /= Number(inputArray[1]);
+          break;
+      }; 
+    }
+    jsCalcInputField.value = total;
   }
 })
