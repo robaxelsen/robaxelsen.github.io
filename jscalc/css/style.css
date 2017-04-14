@@ -3749,6 +3749,7 @@ h2.title {
 
 body {
   background: white;
+  overflow-x: hidden;
 }
 
 nav {
@@ -3769,6 +3770,12 @@ nav {
   overflow: auto;
 }
 
+@media (min-width: 576px) {
+  .jumbotron {
+    padding: 1rem 1rem 2rem 2rem;
+  }
+}
+
 .calculator button { 
   float: left;
   width: 24%;
@@ -3785,7 +3792,7 @@ nav {
 }
 
 .navbar-brand {
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 
 .clear-button {
