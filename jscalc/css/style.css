@@ -3748,8 +3748,12 @@ h2.title {
 /* CUSTOM PROJECT SPECIFIC CSS */
 
 body {
-  background: white;
   overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  background: white;
 }
 
 nav {
