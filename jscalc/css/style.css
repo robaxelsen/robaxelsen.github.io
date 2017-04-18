@@ -3789,6 +3789,7 @@ nav {
   float: left;
   width: 24%;
   font-size: 150%;
+  cursor: pointer;
 }
 
 #input-field { 
