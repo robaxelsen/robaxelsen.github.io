@@ -8,10 +8,10 @@ window.jsCalcEqualButton = document.getElementById('equal-button');
 window.jsCalcInputField = document.getElementById('input-field');
 
 // DISABLE MOBILE SCROLLING:
-document.ontouchmove = function(e) {
-  alert('yes');
-  //e.preventDefault();
-}
+document.body.addEventListener("touchmove", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+}, false);
 
 // NUMBER BUTTONS: Adding click listener to all number buttons, which grabs the value of the clicked button, and adds it to the input field.
 for (var i = 0; i < jsCalcNumButtons.length; i++) {
