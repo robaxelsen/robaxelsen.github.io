@@ -1,13 +1,21 @@
 window.pomodoroCountdownId;
-window.pomodoroTime = 10;
 window.pomodoroButtonPressed = false;
+window.minutesSelect = document.getElementById('minutes-select');
+window.pomodoroTime = 25;
 window.pomodoroTimeLeft = document.getElementById('timeleft');
 window.pomodoroGoButton = document.getElementById('gobutton');
+window.minutesSelect.addEventListener('change', function(event) {
+  window.pomodoroTime = event.target.value;
+})
 window.pomodoroGoButton.addEventListener('click', function() {
+  console.log(window.pomodoroTime);
   window.pomodoroCountdown();
 })
-// TODO: Change to minutes (instead of seconds), and implement
-// a dropdown to choose how many minutes before pressing 'Go!'
+// TODO: Change to minutes (instead of seconds), by implementing
+// a countdown of minutes and seconds
+// TODO: Decide on some css to animate depending on seconds and/or minutes,
+// for example a hourglass, circle being filled with color, or filling a
+// circle gradually like a piechart
 window.pomodoroShowNextSecond = function() {
   if (window.pomodoroTime > 0) {
     window.pomodoroTime --;
