@@ -1,3 +1,5 @@
+var alertSound = new Audio('./audio/ship_bell.mp3');
+alertSound.loop = false;
 window.pomodoroCountdownId;
 window.pomodoroButtonPressed = false;
 window.minutesSelect = document.getElementById('minutes-select');
@@ -22,7 +24,7 @@ window.pomodoroShowNextSecond = function() {
     window.pomodoroTimeLeft.innerHTML = window.pomodoroTime;
   } else if (window.pomodoroButtonPressed && window.pomodoroTime === 0) {
     window.pomodoroButtonPressed = false;
-    alert('time is up');
+    alertSound.play();
   }
 }
 window.pomodoroCountdown = function() {
@@ -31,7 +33,5 @@ window.pomodoroCountdown = function() {
     window.pomodoroCountdownId = setInterval(window.pomodoroShowNextSecond, 1000);
   }
 }
-// TODO: Make a sound play when time is up, and make sure it
-// goes off also when in other tab
 
-// TODO: Check the other user stories, and plan them out here
+// TODO: Also implement reset clock feature
