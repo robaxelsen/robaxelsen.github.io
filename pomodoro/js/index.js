@@ -2,10 +2,15 @@ var alertSound = new Audio('./audio/ship_bell.mp3');
 alertSound.loop = false;
 window.pomodoroCountdownId;
 window.pomodoroButtonPressed = false;
+window.pomodoroResetButton = document.getElementById('resetbutton');
+window.resetCheck = window.pomodoroResetButton.value;
 window.minutesSelect = document.getElementById('minutes-select');
 window.pomodoroTime = 25;
 window.pomodoroTimeLeft = document.getElementById('timeleft');
 window.pomodoroGoButton = document.getElementById('gobutton');
+window.pomodoroResetButton.addEventListener('click', function() {
+  window.resetCheck = true;
+})
 window.minutesSelect.addEventListener('change', function(event) {
   window.pomodoroTime = event.target.value;
 })
@@ -19,6 +24,10 @@ window.pomodoroGoButton.addEventListener('click', function() {
 // for example a hourglass, circle being filled with color, or filling a
 // circle gradually like a piechart
 window.pomodoroShowNextSecond = function() {
+  if (window.resetCheck === true) {
+    window.pomodoroTimeLeft.innerHTML = '0, reset.';
+    return;
+  };
   if (window.pomodoroTime > 0) {
     window.pomodoroTime --;
     window.pomodoroTimeLeft.innerHTML = window.pomodoroTime;
@@ -33,5 +42,3 @@ window.pomodoroCountdown = function() {
     window.pomodoroCountdownId = setInterval(window.pomodoroShowNextSecond, 1000);
   }
 }
-
-// TODO: Also implement reset clock feature
