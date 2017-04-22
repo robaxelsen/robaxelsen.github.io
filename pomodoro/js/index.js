@@ -1,44 +1,49 @@
 var alertSound = new Audio('./audio/ship_bell.mp3');
 alertSound.loop = false;
-window.pomodoroCountdownId;
-window.pomodoroButtonPressed = false;
-window.pomodoroResetButton = document.getElementById('resetbutton');
-window.resetCheck = window.pomodoroResetButton.value;
-window.minutesSelect = document.getElementById('minutes-select');
-window.pomodoroTime = 25;
-window.pomodoroTimeLeft = document.getElementById('timeleft');
-window.pomodoroGoButton = document.getElementById('gobutton');
-window.pomodoroResetButton.addEventListener('click', function() {
-  window.resetCheck = true;
+var pomodoroCountdownId;
+var pomodoroButtonPressed = false;
+var pomodoroResetButton = document.getElementById('resetbutton');
+var resetCheck = pomodoroResetButton.value;
+var minutesSelect = document.getElementById('minutes-select');
+var pomodoroTime = 25;
+var pomodoroTimeLeft = document.getElementById('timeleft');
+var pomodoroGoButton = document.getElementById('gobutton');
+pomodoroResetButton.addEventListener('click', function() {
+  resetCheck = true;
 })
-window.minutesSelect.addEventListener('change', function(event) {
-  window.pomodoroTime = event.target.value;
+minutesSelect.addEventListener('change', function(event) {
+  pomodoroTime = event.target.value;
 })
-window.pomodoroGoButton.addEventListener('click', function() {
-  console.log(window.pomodoroTime);
-  window.pomodoroCountdown();
+pomodoroGoButton.addEventListener('click', function() {
+  console.log(pomodoroTime);
+  pomodoroCountdown();
 })
 // TODO: Change to minutes (instead of seconds), by implementing
 // a countdown of minutes and seconds
 // TODO: Decide on some css to animate depending on seconds and/or minutes,
 // for example a hourglass, circle being filled with color, or filling a
 // circle gradually like a piechart
-window.pomodoroShowNextSecond = function() {
-  if (window.resetCheck === true) {
-    window.pomodoroTimeLeft.innerHTML = '0, reset.';
+
+// TODO: Issue with function "speeding up" after reset. Check if we
+// can return differentlym use switch/case, or kill interval/function
+pomodoroShowNextSecond = function() {
+  if (resetCheck === true || pomodoroButtonPressed === false) {
+    pomodoroTimeLeft.innerHTML = '0, reset.';
+    pomodoroButtonPressed = false;
+    resetCheck = false;
     return;
   };
-  if (window.pomodoroTime > 0) {
-    window.pomodoroTime --;
-    window.pomodoroTimeLeft.innerHTML = window.pomodoroTime;
-  } else if (window.pomodoroButtonPressed && window.pomodoroTime === 0) {
-    window.pomodoroButtonPressed = false;
+  if (pomodoroTime > 0) {
+    pomodoroTime --;
+    pomodoroTimeLeft.innerHTML = pomodoroTime;
+  } else if (pomodoroButtonPressed && pomodoroTime === 0) {
+    pomodoroButtonPressed = false;
     alertSound.play();
   }
 }
-window.pomodoroCountdown = function() {
-  if (window.pomodoroButtonPressed === false) {
-    window.pomodoroButtonPressed = true;
-    window.pomodoroCountdownId = setInterval(window.pomodoroShowNextSecond, 1000);
+pomodoroCountdown = function() {
+  if (pomodoroButtonPressed === false) {
+    pomodoroButtonPressed = true;
+    pomodoroCountdownId = setInterval(pomodoroShowNextSecond, 1000);
   }
 }
