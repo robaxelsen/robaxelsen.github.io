@@ -5,17 +5,18 @@ var pomodoroButtonPressed = false;
 var pomodoroResetButton = document.getElementById('resetbutton');
 var resetCheck = pomodoroResetButton.value;
 var minutesSelect = document.getElementById('minutes-select');
-var pomodoroTime = 25;
+var pomodoroTime = 25 * 60;
 var pomodoroTimeLeft = document.getElementById('timeleft');
 var pomodoroGoButton = document.getElementById('gobutton');
+var minute = 0;
+var seconds = 0;
 pomodoroResetButton.addEventListener('click', function() {
   resetCheck = true;
 })
 minutesSelect.addEventListener('change', function(event) {
-  pomodoroTime = event.target.value;
+  pomodoroTime = event.target.value * 60;
 })
 pomodoroGoButton.addEventListener('click', function() {
-  console.log(pomodoroTime);
   pomodoroCountdown();
 })
 // TODO: Change to minutes (instead of seconds), by implementing
@@ -26,16 +27,19 @@ pomodoroGoButton.addEventListener('click', function() {
 
 pomodoroShowNextSecond = function() {
   if (resetCheck === true || pomodoroButtonPressed === false) {
-    pomodoroTimeLeft.innerHTML = '0, reset.';
+    pomodoroTimeLeft.innerHTML = '0:00';
     pomodoroButtonPressed = false;
     resetCheck = false;
     clearInterval(pomodoroCountdownId);
-    // TODO: Reset select to 25, and/or reset it's value
+    pomodoroTime = minutesSelect.value * 60;
     return;
   };
   if (pomodoroTime > 0) {
+    minutes = Math.floor(pomodoroTime / 60);
+    seconds = pomodoroTime % 60;
+    // TODO: If pomodoroTime is lower than 60? Implement
     pomodoroTime --;
-    pomodoroTimeLeft.innerHTML = pomodoroTime;
+    pomodoroTimeLeft.innerHTML = minutes + ':' + seconds;
   } else if (pomodoroButtonPressed && pomodoroTime === 0) {
     pomodoroButtonPressed = false;
     alertSound.play();
@@ -47,3 +51,5 @@ pomodoroCountdown = function() {
     pomodoroCountdownId = setInterval(pomodoroShowNextSecond, 1000);
   }
 }
+
+console.log(119%60);
