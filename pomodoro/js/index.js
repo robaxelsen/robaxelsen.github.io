@@ -24,13 +24,13 @@ pomodoroGoButton.addEventListener('click', function() {
 // for example a hourglass, circle being filled with color, or filling a
 // circle gradually like a piechart
 
-// TODO: Issue with function "speeding up" after reset. Check if we
-// can return differentlym use switch/case, or kill interval/function
 pomodoroShowNextSecond = function() {
   if (resetCheck === true || pomodoroButtonPressed === false) {
     pomodoroTimeLeft.innerHTML = '0, reset.';
     pomodoroButtonPressed = false;
     resetCheck = false;
+    clearInterval(pomodoroCountdownId);
+    // TODO: Reset select to 25, and/or reset it's value
     return;
   };
   if (pomodoroTime > 0) {
