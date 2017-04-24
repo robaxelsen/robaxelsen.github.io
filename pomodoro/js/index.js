@@ -19,11 +19,8 @@ minutesSelect.addEventListener('change', function(event) {
 pomodoroGoButton.addEventListener('click', function() {
   pomodoroCountdown();
 })
-// TODO: Change to minutes (instead of seconds), by implementing
-// a countdown of minutes and seconds
-// TODO: Decide on some css to animate depending on seconds and/or minutes,
-// for example a hourglass, circle being filled with color, or filling a
-// circle gradually like a piechart
+
+// TODO: 1. Style and complete. Maybe overlay timer over a grey bell
 
 pomodoroShowNextSecond = function() {
   if (resetCheck === true || pomodoroButtonPressed === false) {
@@ -36,8 +33,8 @@ pomodoroShowNextSecond = function() {
   };
   if (pomodoroTime > 0) {
     minutes = Math.floor(pomodoroTime / 60);
-    seconds = pomodoroTime % 60;
-    // TODO: If pomodoroTime is lower than 60? Implement
+    secondsInitial = pomodoroTime % 60;
+    seconds = secondsInitial <= 9 ? '0' + secondsInitial : secondsInitial;
     pomodoroTime --;
     pomodoroTimeLeft.innerHTML = minutes + ':' + seconds;
   } else if (pomodoroButtonPressed && pomodoroTime === 0) {
@@ -51,5 +48,3 @@ pomodoroCountdown = function() {
     pomodoroCountdownId = setInterval(pomodoroShowNextSecond, 1000);
   }
 }
-
-console.log(119%60);

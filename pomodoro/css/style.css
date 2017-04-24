@@ -8,5 +8,13 @@ body {
 }
 
 #timeleft {
-  height: 60px;
+  height: 300px;
+  width: 300px;
+  font-size: 5rem;
+  border-radius: 50%;
+  background: #696969;
+  margin: 20px auto;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 300px;
 }
