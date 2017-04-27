@@ -8,22 +8,24 @@
 <body>
   <div class="container">
     <div class="pomodoro">
-      <h1>Pomodoro Clock</h1>
-      <select id="minutes-select">
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-        <option value="25" selected>25</option>
-        <option value="30">30</option>
-        <option value="35">35</option>
-        <option value="45">40</option>
-        <option value="50">50</option>
-        <option value="55">55</option>
-        <option value="60">60</option>
-      </select>
-      <button id="gobutton" class="action-button shadow animate green">GO</button>
-      <button id="resetbutton" class="action-button shadow animate red" value="false">RESET</button>
+      <h1>Pomodoro Clock (TODO: Replace with nav like in jscalc)</h1>
+      <div class="button-row">
+        <select id="minutes-select" class="action-button shadow animate blue">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25" selected>25</option>
+          <option value="30">30</option>
+          <option value="35">35</option>
+          <option value="45">40</option>
+          <option value="50">50</option>
+          <option value="55">55</option>
+          <option value="60">60</option>
+        </select>
+        <button id="gobutton" class="action-button shadow animate green">GO</button>
+        <button id="resetbutton" class="action-button shadow animate red" value="false">RESET</button>
+      </div>
       <div id="timeleft"></div>
     </div>
   </div>
