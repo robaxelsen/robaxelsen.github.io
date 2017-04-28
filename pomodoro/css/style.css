@@ -5,13 +5,17 @@ body {
 }
 
 .navbar {
-  background: red;
+  background: #E74C3C;
   margin-bottom: 30px;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
 }
 
 .navbar-header {
   font-size: 4rem;
   float: none;
+  margin: 10px 0;
 }
 
 .container-fluid {
@@ -28,11 +32,12 @@ body {
   width: 300px;
   font-size: 7rem;
   border-radius: 50%;
-  background: red;
+  background: #E74C3C;
   margin: 20px auto;
   vertical-align: middle;
   text-align: center;
   line-height: 300px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .animate {
