@@ -28,15 +28,15 @@ body {
 }
 
 #timeleft {
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   font-size: 7rem;
   border-radius: 50%;
   background: #E74C3C;
   margin: 20px auto;
   vertical-align: middle;
   text-align: center;
-  line-height: 300px;
+  line-height: 250px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
