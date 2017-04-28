@@ -1,19 +1,19 @@
 /*!
-    
+
  =========================================================
  * Material Kit - v1.1.1.0
  =========================================================
- 
+
  * Product Page: http://www.creative-tim.com/product/material-kit
  * Copyright 2017 Creative Tim (http://www.creative-tim.com)
  * Licensed under MIT (https://github.com/timcreative/material-kit/blob/master/LICENSE.md)
- 
+
  =========================================================
- 
+
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- 
+
  */
- 
+
 /* ANIMATION */
 /* SHADOWS */
 /* Shadows (from mdl http://www.getmdl.io/) */
@@ -3749,9 +3749,6 @@ h2.title {
 
 body {
   overflow-x: hidden;
-}
-
-body {
   position: relative;
   background: white;
 }
@@ -3785,14 +3782,14 @@ nav {
   }
 }
 
-.calculator button { 
+.calculator button {
   float: left;
   width: 24%;
   font-size: 150%;
   cursor: pointer;
 }
 
-#input-field { 
+#input-field {
   text-align: right;
   padding: 10px;
   margin: 10px 0;

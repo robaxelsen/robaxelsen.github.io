@@ -3,13 +3,17 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Pomodoro Clock</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
+  <nav class="navbar" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">Pomodoro Clock</div>
+    </div>
+  </nav>
   <div class="container">
     <div class="pomodoro">
-      <h1>Pomodoro Clock (TODO: Replace with nav like in jscalc)</h1>
-      <div class="button-row">
         <select id="minutes-select" class="action-button shadow animate blue">
           <option value="5">5</option>
           <option value="10">10</option>
@@ -25,9 +29,8 @@
         </select>
         <button id="gobutton" class="action-button shadow animate green">GO</button>
         <button id="resetbutton" class="action-button shadow animate red" value="false">RESET</button>
-      </div>
-      <div id="timeleft"></div>
     </div>
+    <div id="timeleft"></div>
   </div>
 <script src="js/index.js"></script>
 </body>

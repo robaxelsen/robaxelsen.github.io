@@ -1,5 +1,21 @@
 body {
+  overflow-x: hidden;
+  position: relative;
+  background: white;
+}
+
+.navbar {
   background: red;
+  margin-bottom: 30px;
+}
+
+.navbar-header {
+  font-size: 4rem;
+  float: none;
+}
+
+.container-fluid {
+  text-align: center;
 }
 
 .pomodoro {
@@ -10,9 +26,9 @@ body {
 #timeleft {
   height: 300px;
   width: 300px;
-  font-size: 5rem;
+  font-size: 7rem;
   border-radius: 50%;
-  background: #696969;
+  background: red;
   margin: 20px auto;
   vertical-align: middle;
   text-align: center;
@@ -28,11 +44,10 @@ body {
 	position: relative;
 	padding: 10px 40px;
   margin: 0px 10px 10px 0px;
-  float: left;
 	border-radius: 10px;
 	font-size: 25px;
 	color: #FFF;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 .blue {
@@ -58,8 +73,3 @@ body {
   -webkit-transform: translate(0px,5px);
 	border-bottom: 1px solid;
 }
-
-.button-row {
-  /* TODO: Center this div */
-}
-
