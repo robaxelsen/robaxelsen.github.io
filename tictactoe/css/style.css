@@ -1,0 +1,68 @@
+#root {
+  position: relative;
+}
+#tictactoe {
+  margin: 50px auto;
+  width: 600px;
+  height: 600px;
+}
+.cell {
+  height: 196px;
+  width: 196px;
+  background: #0f0;
+  float: left;
+  border: 2px solid #000;
+}
+.text {
+  margin: 30% auto;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+}
+.player {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 3rem;
+}
+.player #as-o {
+  display: none;
+}
+.player #o-won {
+  display: none;
+}
+.player #x-won {
+  display: none;
+}
+#won {
+  text-align: center;
+}
+#symbol-button {
+  background: #0f0;
+  height: 50px;
+  font-size: 22px;
+  text-align: center;
+  border: 0;
+  border-bottom: 2px solid #000;
+  cursor: pointer;
+  padding: 0 10px;
+}
+#o-won {
+  background: #0f0;
+  height: 50px;
+  font-size: 40px;
+  text-align: center;
+  border: 0;
+  border-bottom: 2px solid #000;
+  cursor: pointer;
+  padding: 0 10px;
+}
+#x-won {
+  background: #0f0;
+  height: 50px;
+  font-size: 40px;
+  text-align: center;
+  border: 0;
+  border-bottom: 2px solid #000;
+  cursor: pointer;
+  padding: 0 10px;
+}
