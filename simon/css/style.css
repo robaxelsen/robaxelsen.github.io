@@ -1,0 +1,71 @@
+.row {
+  position: relative;
+}
+#simon {
+  width: 500px;
+  height: 500px;
+  color: #fff;
+  border: 5px solid #000;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+}
+.color {
+  width: 250px;
+  height: 250px;
+  float: left;
+}
+#control {
+  height: 200px;
+  width: 200px;
+  background: #fff;
+  margin: 150px;
+  overflow: visible;
+  position: absolute;
+  border-radius: 50%;
+  border: 5px solid #000;
+  text-align: center;
+}
+#control p {
+  color: #000;
+  font-size: 50px;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+}
+#control #row1 {
+  color: #000;
+}
+#control #row1 #count {
+  width: 20px;
+  height: 15px;
+  border-radius: 25%;
+  background: #46010f;
+}
+#control #row1 #start {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f00;
+}
+#control #row1 #strict {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff0;
+}
+#cell1 {
+  background: #0f0;
+  border-top-left-radius: 100%;
+}
+#cell2 {
+  background: #f00;
+  border-top-right-radius: 100%;
+}
+#cell3 {
+  background: #00f;
+  border-bottom-left-radius: 100%;
+}
+#cell4 {
+  background: #ff0;
+  border-bottom-right-radius: 100%;
+}
