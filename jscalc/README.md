@@ -1,4 +1,4 @@
 # JavaScript Calculator  
 JavaScript Calculator Live Demo:  
-[JavaScript Calculator](https://robeerob.github.io/jscalc/)
+[JavaScript Calculator](https://robaxelsen.github.io/jscalc/)
 
